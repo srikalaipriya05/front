@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>simple page</title>
+    <style>
+        body{
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#header{
+display: flex;
+flex-direction: row;
+justify-content: center;
+position: relative;
+
+}
+h2{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-style: italic;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    display: inline-flex;
+
+}
+ul li{
+    margin:20px;
+    width:30px;
+    padding: 30px;
+}
+ul li a{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    
+}
+ul li:hover::after{
+    color:white;
+    background-color:black ;
+}
+ul li::after{
+    content: '';
+    top:0;
+    left:50%;
+    width:0;
+    height:4px;
+}
+
+.active , ul li :hover{
+    color:mediumblue;
+    background-color:white;
+    border-radius: 4px;
+}
+.sub{
+    display: none;
+}
+ul li:hover .sub{
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    margin-left:15px;
+   
+}
+ul li:hover .sub ul{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content:space-between ;
+}
+ul li:hover .sub ul li{
+    padding:0px;
+    margin: 4px;
+    width:100px;
+}
+
+ul li:hover .sub ul li a{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
+    display: inline-block;
+}
+ul li:hover .sub-menu li a:hover{
+    color:sienna; 
+}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+@media(max-width:400px){
+    ul{
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+}
+.img{
+    background: url('https://www-cdn.eumetsat.int/files/2020-07/ocean_surface_pxhere.com.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width:100%;
+    height: 600px;
+    z-index: -1;
+    text-align: center;
+    color: white;
+}
+.img h1{
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    padding-top: 200px;
+}
+.img p{
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+.btn1{
+    width: 150px;
+    background-color:mediumslateblue;
+    border:1px solid mediumslateblue;
+    color: white;
+    text-transform: uppercase;
+    font-family: cursive;
+    display:inline-block;
+    transition:all 0.5s;
+}
+.btn1 span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn1 span::after{
+    content: '\00bb';
+    position: absolute;
+    right:-20px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.btn1:hover span{
+    padding-right: 20px;
+}
+.btn1:hover span::after{
+    opacity: 1;
+    right:0;
+}
+.btn2{
+    width: 200px;
+    color: white;
+    text-transform: uppercase;
+    font-family: cursive;
+    display:inline-block;
+    transition:all 0.5s; 
+    border: 1px solid white;
+    margin-left: 20px;
+}
+.btn2 span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn2 span::after{
+    content: '\00bb';
+    position: absolute;
+    right:-20px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.btn2:hover span{
+    padding-right: 20px;
+    background-color: white;
+    color: black;
+}
+.btn2:hover span::after{
+    opacity: 1;
+    right:0;
+}
+@media(max-width:400px){
+    #header{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        flex-direction: row;
+        font-size: 10px;
+        padding-right:5px;
+        margin: 0;
+        padding: 0;
+    }
+}
+/*laptop image1 section */
+.section{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:100px 450px;
+    width: 50%;
+}
+.section img{
+    width: 400px;
+    height:400px;
+}
+.sec{
+    display:inline-flex;
+    flex-direction: column;
+    margin:0px 80px;
+    width: 50%;
+}
+.sec h2{
+    color:black;
+    font-size: 25px;
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sec p{
+    margin:10px 0;
+    color: gray;
+}
+
+/* button tag  */
+.but{
+    width: 150px;
+    background-color:mediumslateblue;
+    border:1px solid mediumslateblue;
+    color: white;
+    text-transform: uppercase;
+    font-family: cursive;
+    display:inline-block;
+    transition:all 0.5s;
+    text-align: center;
+}
+@media(max-width:400px){
+    .sec h2,.sec p{
+        flex-direction:column;
+        margin: 0;
+        padding: 0;
+    }
+    .section img{
+        margin: 0;
+        padding: 0;
+    }
+}
+/* portfolio section */
+.port{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.col{
+    display: inline-flex;
+    flex-direction:column;
+    margin: 0 450px;
+    width: 50%;
+}
+.col h2{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+}
+.col p{
+    font-size: 19px;
+    color: gray;
+}
+.portfolio{
+    display:inline-flex;
+    width:50%;
+}
+.portfolio img{
+    width: 350px;
+    height: 350px;
+}
+/* image 2 */
+.small{
+    z-index: -1;
+    height: 600px;
+    width: 100%;
+    background-image: url('https://www.iddri.org/sites/default/files/styles/publication_full/public/IMG-PHOTOS/Th%C3%A8mes/ocean0.jpg?itok=4SYdo8p0');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.small h2{
+font-size: 40px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+font-weight: 400;
+font-style: italic;
+text-align: center;
+padding-top: 200px;
+}
+.small p{
+font-size: 20px;
+font-weight: 400;
+text-align: center;
+}
+/* button1  */
+.but1{
+    width: 150px;
+    background-color:mediumslateblue;
+    border:1px solid mediumslateblue;
+    color: white;
+    text-transform: uppercase;
+    font-family: cursive;
+    display:inline-block;
+    text-align: center;
+    margin: 0 860px;
+}
+@media(max-width:600px){
+    .but1{
+        margin:0 25%;
+        padding: 0%;
+    }
+}
+h3{
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+/* tree image */
+.tree{
+    margin-top: 20px;
+    background-repeat: no-repeat ;
+    background-size:cover;
+    width:900px;
+    height:800px;
+    margin-left:auto ;
+    margin-right:auto ;
+    display:block;
+}
+/* black */
+.black{
+    background-color: black;
+}
+.black h2{
+    color: white;
+    text-align: center;
+}
+.black p{
+    color: white;
+    text-align: center;
+}
+/* images */
+.project{
+    display:inline-flex;
+    flex-direction: row;
+    position: relative;
+    width: 50%;
+}
+.project img{
+    width: 400px;
+    height: 350px;
+    margin:15px;
+  
+    display: block;
+}
+.overlay{
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    width:100%;
+    height:0;
+    position: absolute;
+    transition: .5s;
+}
+.project:hover .overlay{
+    height:100%;
+}
+.text{
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+@media(max-width:400px){
+    .projects{
+        flex-direction: column;
+        width: 50px;
+        height: 50px;
+    }
+    .projects+.projects{
+        margin-top: 20px;
+    }
+}
+.customer{
+    margin: 10px;
+    background: url('https://cdn.wallpapersafari.com/21/14/36fLTj.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+width:100%;
+height:400px;
+z-index: -1;
+
+}
+.customer h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+.customer p{
+    text-align: center;
+    font-size: 20px;
+}
+.play{
+   background: transparent;
+    text-align: center;
+}
+.play img{
+    border-radius: 50px;
+    height: 100px;
+    width:100px;
+}
+/* left and right arrow */
+.pagination{
+    display: inline-block;
+    position: relative;
+}
+.pagination a{
+    color: black;
+    float: left;
+    padding: 8px;
+}
+@media(max-width:400px){
+    .play img{
+        margin:0;
+        padding: 0;
+        margin: 100px;
+    }
+}
+
+/* clients */
+ h2{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-style: italic;
+    text-align: center;
+}
+.fab{
+    font-size: 150px;
+    padding:20px 100px;
+    color:rgb(95, 39, 39);
+    background:transparent;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+/* do */
+.do{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+ } 
+.do h4{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-style: italic;
+    float: left;
+    margin:50px;
+}
+.do .button{
+    width:auto;
+     background-color:mediumslateblue;
+    border:1px solid mediumslateblue;
+    color: white;
+    font-family: cursive;
+}
+.social{
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.social p{
+    color: white;
+    font-size: 20px;
+    font-family: cursive;
+}
+.social .fab{
+    display: inline-flex;
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h2>Shapely Demo</h2>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#">ABOUTTHETESTS</a>
+            <div class="sub">
+                <ul>
+                <li><a href="#">Page Image Alignment</a></li>
+                <li><a href="#">PageMarkup And Formatting</a></li>
+                <li><a href="#">Clearing Floats</a></li>
+                <li><a href="#">Page with Comments</a></li>
+                <li><a href="#">PageWith Commands disabled</a></li>
+                </li>
+            </ul>
+            </div>
+            </li>
+            <li><a href="#">LEVEL1</a>
+                <div class="sub">
+                    <ul>
+                    <li><a href="#">Level2</a></li>
+                    <li><a href="#">Level2a</a></li>
+                    <li><a href="#">Level2b</a></li>
+                    </ul>
+            <li><a href="#">SHOP</a></li>
+        </ul>
+        <form>
+            <input type="text" name="search" placeholder="Search..">
+          </form>
+    </div>
+    <!-- image  -->
+    <div class="img">
+        <h1>We change Everything WordPress</h1>
+        <p>This is the Wordpress theme you Wil ever want ti use</p>
+        <div class="btn1" vertical-align="middle"><span>read more</span></div>
+        <div class="btn2" vertical-align="middle"><span>download more</span></div>
+    </div>
+    <div class="section">
+        <img src="https://images.pexels.com/photos/2148216/pexels-photo-2148216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="computer">
+        <div class="sec">
+        <h1>SEO friendly</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi assumenda, debitis beatae fugit placeat fugiat saepe officia est culpa quisquam consequuntur autem sed modi exercitationem, architecto minima, ut impedit?</p>
+        <div class="but">
+        READ MORE
+        </div>
+    </div>
+    </div>
+    <!-- portfolio section -->
+    <div class="port">
+        <div class="col">
+        <h2>Portfolio Section</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ab tempora repellendus, et exercitationem magnam unde, in saepe incidunt vitae eveniet est laborum, iusto velit veritatis temporibus totam facere quas?</p>
+        <div class="but">
+            SET IN ACTION
+        </div>
+        </div>
+        <div class="portfolio">
+            <img src="https://images.pexels.com/photos/459653/pexels-photo-459653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="computer">
+        </div>
+    </div>
+    <div class="small">
+        <h2>Small Parallax Section</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero harum facere recusandae labore ex, inventore accusantium ipsam iste quo similique perspiciatis saepe. Earum at esse explicabo facilis cumque aliquam molestiae!</p>
+        <div class="but1">
+            MORE INFO
+        </div>
+    </div>
+        <h3>Limitless Option</h3>
+        <p style="color: gray; text-align: center;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam facere ratione, ipsa accusantium similique earum consequuntur error quod eligendi fuga. Voluptas, maiores. Harum expedita, temporibus perspiciatis culpa dignissimos dolorem? Nisi!</p>
+    <div class="but1"> DOWNLOAD NOW</div>
+        <img class="tree" src="https://media.npr.org/assets/img/2020/03/13/australia-rott-2_custom-34d03ce299d28d8b7b3432246cee5dae8fc75592.jpg"></div>
+<!-- black background -->
+<div class="black">
+    <h2>Our Latest Project</h2>
+    <p>Here is our latest projects.You'll love them</p>
+    <div class="project">
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/12/photo-1443890484047-5eaa67d1d630-1.jpg"><div class="overlay"><div class="text">project#10</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1422568374078-27d3842ba676-1.jpg" alt="mountain"><div class="overlay"><div class="text">project#11</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1447834353189-91c48abf20e1-1-1.jpg" alt="mountain"><div class="overlay"><div class="text">roject#12</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/12/photo-1447877085163-3cce903855cd-1.jpg"><div class="overlay"><div class="text">project#13</div></div>
+     </div>   
+     <div class="project">
+        
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1447958374760-1ce70cf11ee3-1-1.jpg" alt=""><div class="overlay"><div class="text">project#14</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1430329429612-babb42f88673-1-1.jpg" alt=""><div class="overlay"><div class="text">>project#15</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1449057528837-7ca097b3520c-1-1.jpg" alt=""><div class="overlay"> <div class="text">project#16</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1449168013943-3a15804bb41c-1-1.jpg" alt=""><div class="overlay"><div class="text">project#17</div></div>
+       
+    </div>
+    <div class="project">
+    
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1451186859696-371d9477be93-1-1.jpg" alt="map"><div class="overlay"><div class="text">project#18</div></div>
+            <img src="https://demo.colorlib.com/shapely/wp-content/uploads/sites/59/2016/03/photo-1448518184296-a22facb4446f-1-1.jpg" alt="mount"><div class="overlay"><div class="text">project#19</div></div>
+        
+    </div>
+</div>
+<!-- customer say -->
+<div class="customer">
+    <h2>What Our Customers Say</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo rem placeat id vitae laudantium, sapiente eos excepturi voluptates, explicabo modi molestias itaque quo ut dolorum, officiis voluptatum in nihil eius.</p>
+    <div class="play">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGnUrnbA7H_JWzdPf-5y1gwSJfHmoL5MVoA&usqp=CAU" alt="play">
+    </div>
+</div>
+<div class="Client">
+    <h2>Our Main Clients</h2>
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-js"></i>
+        <i class="fab fa-bootstrap"></i>
+        <i class="fab fa-less"></i>
+</div>
+<!-- do class -->
+    <div class="do">
+        <h4>Do You like this Awesome Wordpress theme?</h4>
+        <button class="button">Download now</button>
+    </div>
+<div class="black">
+    <div class="social">
+        <p>Theme by Powered by wordpress</p>
+            <div class="icon">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+    </div>
+</div>
+</body>
+<script src="https://kit.fontawesome.com/2724a3a5be.js" crossorigin="anonymous"></script>
+</html>
